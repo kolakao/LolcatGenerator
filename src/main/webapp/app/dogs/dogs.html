@@ -1,0 +1,10 @@
+<div id="dogContainer">
+
+</div>
+
+<script>
+    var img = $('<img />', {src: 'http://www.randomdoggiegenerator.com/randomdoggie.php?_='+ (new Date()).getTime()});
+    var container = $("#dogContainer");
+    container.html('');
+    img.appendTo(container);
+</script>

@@ -1,0 +1,13 @@
+<div id="catContainer">
+    <div class="content">
+        <div class="content__container"><p class="content__container__text">
+            CATZ RULEZZ
+        </p></div>
+    </div>
+</div>
+
+<script>
+    var img = $('<img />', {src: 'http://thecatapi.com/api/images/get?_=' + (new Date()).getTime() + '?format=src&type=gif'});
+    var container = $("#catContainer");
+    img.appendTo(container);
+</script>

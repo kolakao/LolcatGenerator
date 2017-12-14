@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="lolcats">
+<head>
+    <meta charset="UTF-8">
+    <title>Lolcatzz for everyone!</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/myStyles.css">
+    <!--<script src="tether.min.js"></script>-->
+    <script src="jquery-3.2.1.min.js"></script>
+    <!--<script src="bootstrap.min.js"></script>-->
+    <script src="angular.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Lolcats generator</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a id="catsLink" href="#">Catz</a></li>
+                <li><a id="dogsLink" href="#">Dogz</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div ng-view>
+
+</div>
+<div id="contentWrapper" style="text-align: center">
+    <div id="content" style="display: inline-block;">
+    </div>
+
+</div>
+
+<script>
+
+//    var lolcat = angular.module('lolcat', []);
+//    lolcat.config(function ($routeProvider) {
+//        $routeProvider.when('/', {
+//            controller: 'welcomeController',
+//            templateUrl: 'app/welcome.html'
+//        })
+//            .when('/cats', {
+//                controller: 'catsController',
+//                templateUrl: 'app/cats/cats.html'
+//            })
+//            .when('/dogs',{
+//                controller: 'dogsController',
+//                templateUrl: 'app/dogs/dogs.html'
+//            })
+//    })
+        $("#content").load("app/welcome.html");
+
+        $(function () {
+            $("#catsLink").click(function (e) {
+                clearContent();
+                e.preventDefault();
+                $("#content").load("app/cats/cats.html")
+            });
+        });
+        $(function () {
+            $("#dogsLink").click(function (e) {
+                clearContent();
+                e.preventDefault();
+                $("#content").load("app/dogs/dogs.html")
+            });
+        });
+        function clearContent() {
+            $("#content").html('');
+        }
+</script>
+</body>
+</html>
