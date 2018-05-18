@@ -1,5 +1,0 @@
-echo "RUNNING DEFAULT ASSEMBLE SCRIPT"
-${STI_SCRIPTS_PATH}/assemble
-echo "TRYING TO RUN GRADLE"
-chmod +x gradlew
-./gradlew build
